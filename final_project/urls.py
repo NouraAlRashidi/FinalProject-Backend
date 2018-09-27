@@ -23,8 +23,10 @@ urlpatterns = [
     path('test/',TestCreateView.as_view(), name = 'test-list'),
     path('candidate/',CandidateCreateView.as_view(), name = 'candidate'),
     path('result/',ResultCreateView.as_view(), name = 'result'),
+    # path('url/?<token>',CandidateCreateView.as_view(), name = 'url' )
     #url(r'^api-token-auth/', CandidateCreateView.as_view()),
     #check the url
 
 
 ]
+

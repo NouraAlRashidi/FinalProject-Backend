@@ -31,7 +31,7 @@ from rest_framework.authtoken.models import Token
 class ChoiceSerializer(serializers.ModelSerializer):
 	class Meta:
 		model = Choice
-		fields = ['choice']
+		fields = ['choice1', 'choice2', 'choice3']
 
 
 class QuestionSerializer(serializers.ModelSerializer):
