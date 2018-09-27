@@ -37,6 +37,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'final',
+    'rest_framework',
+    'rest_framework.authtoken',
+
 ]
 
 MIDDLEWARE = [
@@ -69,6 +73,14 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'final_project.wsgi.application'
 
+#Rest Framework
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework.authentication.TokenAuthentication',
+    ),
+    'DEFAULT_PERMISSION_CLASSES': (
+        'rest_framework.permissions.IsAuthenticated', )
+}
 
 # Database
 # https://docs.djangoproject.com/en/2.1/ref/settings/#databases
@@ -112,6 +124,22 @@ USE_I18N = True
 USE_L10N = True
 
 USE_TZ = True
+
+#EMAIL
+# EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+
+EMAIL_HOST = 'smtp.gmail.com'
+
+EMAIL_PORT = 587
+#497
+
+EMAIL_HOST_USER = 'nouracoded@gmail.com'
+
+EMAIL_HOST_PASSWORD = 'noura123'
+
+EMAIL_USE_TLS = True
+
+SERVER_EMAIL = 'nouracoded@gmail.com'
 
 
 # Static files (CSS, JavaScript, Images)

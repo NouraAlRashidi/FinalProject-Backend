@@ -15,7 +15,18 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from final.views import TestCreateView, CandidateCreateView, ResultCreateView
+ 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('test/',TestCreateView.as_view(), name = 'test-list'),
+    path('candidate/',CandidateCreateView.as_view(), name = 'candidate'),
+    path('result/',ResultCreateView.as_view(), name = 'result'),
+    # path('url/?<token>',CandidateCreateView.as_view(), name = 'url' )
+    #url(r'^api-token-auth/', CandidateCreateView.as_view()),
+    #check the url
+
+
 ]
+
