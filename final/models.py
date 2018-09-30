@@ -47,7 +47,7 @@ class Choice(models.Model):
 	choice1 = models.CharField(max_length=150)
 	choice2 = models.CharField(max_length=150)
 	choice3 = models.CharField(max_length=150)
-	question = models.ForeignKey(Question, on_delete=models.CASCADE)	
+	question = models.ForeignKey(Question, on_delete=models.CASCADE)
 
 	# def __str__(self):
 	# 	return self.choice

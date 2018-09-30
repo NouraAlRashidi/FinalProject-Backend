@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'final',
     'rest_framework',
     'rest_framework.authtoken',
+    'corsheaders',
 
 ]
 
@@ -51,6 +52,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
+    'django.middleware.common.CommonMiddleware',
 ]
 
 ROOT_URLCONF = 'final_project.urls'
@@ -79,7 +82,9 @@ REST_FRAMEWORK = {
         'rest_framework.authentication.TokenAuthentication',
     ),
     'DEFAULT_PERMISSION_CLASSES': (
-        'rest_framework.permissions.IsAuthenticated', )
+        'rest_framework.permissions.IsAuthenticated',
+        'rest_framework.permissions.AllowAny'
+         )
 }
 
 # Database
@@ -125,6 +130,13 @@ USE_L10N = True
 
 USE_TZ = True
 
+#CORS Header
+
+CORS_ORIGIN_ALLOW_ALL = True
+
+
+
+
 #EMAIL
 # EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 
@@ -146,3 +158,5 @@ SERVER_EMAIL = 'nouracoded@gmail.com'
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
 STATIC_URL = '/static/'
+
+
